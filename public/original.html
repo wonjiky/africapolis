@@ -1,0 +1,116 @@
+<html>
+<head>
+	<link rel="stylesheet" href=".\node_modules\leaflet\dist\leaflet.css">
+	<script src=".\node_modules\leaflet\dist\leaflet.js"></script>
+	<script src=".\src\leaflet.snogylop.js"></script>
+	<script type="text/javascript" src=".\top50.json"></script>
+	<script type="text/javascript" src=".\top50_json.json"></script>
+	<script type="text/javascript" src=".\histogram.json"></script>
+	<script type="text/javascript" src=".\agglos.json"></script>
+
+	<script type="text/javascript" src=".\africa_one.geojson"></script>
+	<script type="text/javascript" src=".\africa_continent.geojson"></script>
+	<script type="text/javascript" src=".\agglos_geo.geojson"></script>
+</head>
+<body>
+	<div id="mapid"  style="width: 900px; float:left; height: 900px;"></div>
+<script>
+	
+	// Marker Style
+	var geojsonMarkerOptions = {
+		radius: 50,
+		fillColor: "blue",
+		color: "#000",
+		weight: 1,
+		opacity: 1,
+		fillOpacity: 0.8
+	};
+
+	var geojsonMarkerOptions_small = {
+		radius: 4,
+		fillColor: "red",
+		color: "#000",
+		weight: 1,
+		opacity: 1,
+		fillOpacity: 0.8
+	};    
+
+	//Setting Location for Map
+	var southWest = L.latLng(-28.739134, -25.058270),
+        northEast = L.latLng(32.157281, 50.089421),
+        mybounds = L.latLngBounds(southWest, northEast);
+
+	///Adding Map
+	var mymap = L.map('mapid',{minZoom:4,maxBounds:mybounds}).setView([1.46,13.3], 4);
+	var africa_one_map = L.geoJson(africa_one,{invert:true,color:"grey",fillOpacity:0.4}).addTo(mymap);
+	var africa_continent_map = L.geoJson(africa_continent,{onEachFeature: onEachFeature_continent}).addTo(mymap);
+		africa_continent_map.setStyle({fillOpacity: 0,color: 'transparent'})
+	L.tileLayer('https://api.mapbox.com/styles/v1/mkmd/cjj041lbo07vo2rphltlukpya/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWttZCIsImEiOiJjajBqYjJpY2owMDE0Mndsbml0d2V1ZXczIn0.el8wQmA-TSJp2ggX8fJ1rA', {
+	maxZoom: 18,}).addTo(mymap);
+
+
+	var citieslist = new L.geoJSON(top50, { filter: YearFilter,//onEachFeature: onEachFeature,
+		pointToLayer: function (feature, latlng) {
+			return L.circleMarker(latlng);} //, geojsonMarkerOptions);}
+	}).addTo(mymap);	
+
+	function YearFilter(feature) {
+		if (feature.properties.Year === "a") return true
+	}
+
+	///Event Handler for Leaflet
+	function onEachFeature_continent(feature, layer) {
+		var popupContent = "<table class='tooltip-table'>";
+			popupContent += "<tr><td class='title'></td><td class='data'>" + feature.properties.NAME_FR + "</td></tr>";
+			popupContent += "</table>";
+		
+		//Mouse Hover
+		layer.on('mouseover', function() {
+			layer.setStyle({
+				fillOpacity: 0.3,
+				color: 'black'
+				});});
+
+		//Mouse Hover Leave
+		layer.on('mouseout', function() {
+			layer.setStyle({
+				fillOpacity: 0.0,
+				color: 'transparent'
+				});});
+
+		//onClick Country
+		layer.on('click', function() {
+			citieslist.clearLayers();
+			var a=feature.properties.ISO3_CODE; 
+			mymap.fitBounds(layer.getBounds());
+			
+			function CityFilter(feature) {
+				if (feature.properties.ISO == a) 
+					return true
+			}
+
+			function onEachFeature_cities(feature, layer) {
+				var popupContent = "<table class='tooltip-table'>";
+				popupContent += "<tr><td class='title'>Name:</td><td class='data'>" + feature.properties.NAME + "</td></tr>";
+				popupContent += "<tr><td class='title'>Population:</td><td class='data'>" + feature.properties.PTA2015 + "</td></tr>";
+				popupContent += "</table>";
+				layer.bindPopup(popupContent).openPopup();
+			}
+			
+			newlist = L.geoJson(agglos_geo, { 
+				onEachFeature: onEachFeature_cities,
+				filter: CityFilter,
+				pointToLayer: function (feature, latlng) {
+					return L.circleMarker(latlng, geojsonMarkerOptions_small);
+				}
+			})
+			citieslist.addLayer(newlist)
+		});
+	};
+
+
+</script>
+
+</body>
+
+</html>
