@@ -37,7 +37,7 @@ class Header extends Component {
 					<div className="container-fluid">
                         <NavbarToggler onClick={this.toggleNav} />
 						<NavbarBrand id="maintitle" className="mr-auto">
-                            <img src="assets/images/africapolis_logo.png" height="70"
+                            <img src="africapolis/images/africapolis_logo.png" height="70"
                               alt="Africapolis Visualise Urbanisation in Africa"/>
                         </NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>

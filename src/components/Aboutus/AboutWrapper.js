@@ -24,13 +24,13 @@ class AboutWrapper extends Component {
                                 <Row className="about-text-wrapper">
 
                                     <Col md={6} className="about-img">
-                                        <img src="assets/images/swac-oecd.png" height="10%"
+                                        <img src="africapolis/images/swac-oecd.png" height="10%"
                                         alt="Africapolis Visualise Urbanisation in Africa"/>
                                         <br/>
-                                        <img src="assets/images/e-geopolis.png" height="10%"
+                                        <img src="africapolis/images/e-geopolis.png" height="10%"
                                         alt="Africapolis Visualise Urbanisation in Africa"/>
                                         <br/><br/><br/><br/><br/>
-                                        <img src="assets/images/SDG-11.png" height="5%"
+                                        <img src="africapolis/images/SDG-11.png" height="5%"
                                         alt="Africapolis Visualise Urbanisation in Africa"/>
 
                                     </Col>
@@ -69,46 +69,46 @@ class AboutWrapper extends Component {
                             <Row className="logo-wrapper">
                                 <Col md={2} className="logo"><Paper square={true} className="logopaper">
                                         <div className="logoitems">
-                                            <img src="assets/images/austria.jpg" width="70%"
+                                            <img src="africapolis/images/austria.jpg" width="70%"
                                                 alt="Africapolis Visualise Urbanisation in Africa"/>
                                         </div>
                                 </Paper></Col>
                                 <Col md={2} className="logo"><Paper square={true} className="logopaper">
                                     <div className="logoitems">
-                                        <img src="assets/images/belgium.png" width="70%"
+                                        <img src="africapolis/images/belgium.png" width="70%"
                                                 alt="Africapolis Visualise Urbanisation in Africa"/>
                                     </div>
                                 </Paper></Col>
                                 <Col md={2} className="logo"><Paper square={true} className="logopaper">
                                     <div className="logoitems">
-                                        <img src="assets/images/canada.png" width="70%"
+                                        <img src="africapolis/images/canada.png" width="70%"
                                             alt="Africapolis Visualise Urbanisation in Africa"/>
                                     </div>
                                 </Paper></Col>
                                 <Col md={2} className="logo"><Paper square={true} className="logopaper">
-                                <div className="logoitems"><img src="assets/images/cliss.jpg" height="50%"
+                                <div className="logoitems"><img src="africapolis/images/cliss.jpg" height="50%"
                                         alt="Africapolis Visualise Urbanisation in Africa"/>
                                         </div>
                                 </Paper></Col>
                             </Row>
                             <Row className="logo-wrapper">
                                 <Col md={2} className="logo"><Paper square={true} className="logopaper">
-                                <div className="logoitems"> <img src="assets/images/ECOWAS.jpg" height="50%"
+                                <div className="logoitems"> <img src="africapolis/images/ECOWAS.jpg" height="50%"
                                         alt="Africapolis Visualise Urbanisation in Africa"/>
                                         </div>
                                 </Paper></Col>
                                 <Col md={2} className="logo"><Paper square={true} className="logopaper">
-                                <div className="logoitems"><img src="assets/images/EU.jpg" height="40%"
+                                <div className="logoitems"><img src="africapolis/images/EU.jpg" height="40%"
                                         alt="Africapolis Visualise Urbanisation in Africa"/>
                                         </div>
                                 </Paper></Col>
                                 <Col md={2} className="logo"><Paper square={true} className="logopaper">
-                                <div className="logoitems"><img src="assets/images/france.jpg" height="30%"
+                                <div className="logoitems"><img src="africapolis/images/france.jpg" height="30%"
                                         alt="Africapolis Visualise Urbanisation in Africa"/>
                                         </div></Paper></Col>
                                         <Col md={2} className="logo"><Paper square={true} className="logopaper">
                                         <div className="logoitems">
-                                        <img src="assets/images/lux.png" height="25%"
+                                        <img src="africapolis/images/lux.png" height="25%"
                                               alt="Africapolis Visualise Urbanisation in Africa"/>
 
                                         </div>
@@ -117,23 +117,23 @@ class AboutWrapper extends Component {
                             <Row className="logo-wrapper addmargin">
                                   <Col md={2} className="logo"><Paper square={true} className="logopaper">
                                   <div className="logoitems">
-                                  <img src="assets/images/netherlands.jpg" height="30%"
+                                  <img src="africapolis/images/netherlands.jpg" height="30%"
                                     alt="Africapolis Visualise Urbanisation in Africa"/>
                                     </div>
                                 </Paper></Col>
 
                                 <Col md={2} className="logo"><Paper square={true} className="logopaper">
-                                <div className="logoitems"><img src="assets/images/switzerland.png" height="30%"
+                                <div className="logoitems"><img src="africapolis/images/switzerland.png" height="30%"
                                         alt="Africapolis Visualise Urbanisation in Africa"/>
                                         </div>
                                 </Paper></Col>
                                 <Col md={2} className="logo"><Paper square={true} className="logopaper">
-                                <div className="logoitems"><img src="assets/images/UEMOA.jpg" height="40%"
+                                <div className="logoitems"><img src="africapolis/images/UEMOA.jpg" height="40%"
                                         alt="Africapolis Visualise Urbanisation in Africa"/>
                                         </div></Paper></Col>
                                 <Col md={2} className="logo"><Paper square={true} className="logopaper">
                                     <div className="logoitems">
-                                    <img src="assets/images/US.png" height="30%"
+                                    <img src="africapolis/images/US.png" height="30%"
                                             alt="Africapolis Visualise Urbanisation in Africa"/>
                                     </div>
                                 </Paper></Col>
