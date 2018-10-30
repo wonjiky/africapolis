@@ -94,7 +94,7 @@ class RenderList extends Component {
                             <hr/>
                             {this._renderDownloadFullData()}
                             <hr/>
-                            <img src="assets/images/swac-oecd.png" width="100%"
+                            <img src="africapolis/images/swac-oecd.png" width="100%"
                             alt="Africapolis Visualise Urbanisation in Africa"/>
                     </Col>
                 </Grid>
