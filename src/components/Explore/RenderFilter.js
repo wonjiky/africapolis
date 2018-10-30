@@ -190,7 +190,7 @@ class RenderFilter extends Component {
                     <hr/>
                         {this._renderDownloadFullData()}
                     <hr/>
-                    <img src="africapolis/images/swac-oecd.png" width="100%"
+                    <img src="africapolis/assets/images/swac-oecd.png" width="100%"
                     alt="Africapolis Visualise Urbanisation in Africa"/>
 
 
